@@ -80,7 +80,7 @@ def run(configs, dataset, llm, tokenizer):
                 score_head.append(1 - rank / len(attn_score))
 
             mean = np.mean(score_head)
-            std = np.std(score_head) / 2
+            std = np.std(score_head)
             plt.plot([j - 0.2, j + 0.2], [mean + std, mean + std], 'g-')
             plt.plot([j - 0.2, j + 0.2], [mean - std, mean - std], 'g-')
             plt.plot([j, j], [mean + std, mean - std], 'g-')
